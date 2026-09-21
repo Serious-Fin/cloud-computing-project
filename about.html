@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — The Deploy Log</title>
+  <meta name="description" content="About this mock blog and how it is built." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☁️</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">☁</span>
+        <span class="brand-name">The Deploy Log</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Posts</a>
+        <a href="about.html" class="is-active">About</a>
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle color theme">
+          <span class="theme-icon">◐</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="article">
+      <p class="eyebrow">About</p>
+      <h1>A mock blog, on purpose.</h1>
+      <div class="article-body">
+        <p class="lede">
+          The Deploy Log is a small fake publication about cloud computing. It exists
+          to demonstrate what a static site deploy looks like end to end.
+        </p>
+
+        <h2>How it is built</h2>
+        <div class="about-card">
+          <h3>No build step</h3>
+          <p>
+            Every page is a plain HTML file. Styles live in one CSS document, and a
+            single small script handles the theme toggle, the reading progress bar
+            and the post filter. There is nothing to compile.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>No server, no database</h3>
+          <p>
+            The browser does all the work. Post filtering happens in JavaScript
+            against the cards already on the page, so the site needs no backend and
+            no query language.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>Ready for a CDN</h3>
+          <p>
+            Because it is just files, it can be published by dragging the folder onto
+            a host or by connecting this repository. Publish the root directory and
+            you are done.
+          </p>
+        </div>
+
+        <h2>What it is not</h2>
+        <ul>
+          <li>Not a content management system — posts are edited as HTML.</li>
+          <li>Not search-optimised beyond basic meta tags.</li>
+          <li>Not connected to analytics or comments.</li>
+        </ul>
+
+        <h2>Making it yours</h2>
+        <p>
+          Copy a file in <code>posts/</code>, change the title, date and body, then
+          add a matching card to <code>index.html</code>. Update the
+          <code>data-tags</code> attribute if you want the new post to appear under a
+          topic filter.
+        </p>
+        <pre><code>&lt;li class="post-card"
+    data-tags="cloud"
+    data-title="my new post"
+    data-excerpt="a short summary for the search box"&gt;
+  &lt;a href="posts/my-new-post.html"&gt;…&lt;/a&gt;
+&lt;/li&gt;</code></pre>
+
+        <p><a href="index.html">← Back to all posts</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> The Deploy Log — a mock blog.</p>
+      <p class="footer-links">
+        <a href="about.html">About</a>
+        <a href="https://www.netlify.com" target="_blank" rel="noopener">Netlify</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

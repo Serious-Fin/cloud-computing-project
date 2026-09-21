@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Deploy Log — a small blog</title>
+  <meta name="description" content="A tiny static blog about cloud computing, hosting, and shipping small things on the internet." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☁️</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">☁</span>
+        <span class="brand-name">The Deploy Log</span>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html" class="is-active">Posts</a>
+        <a href="about.html">About</a>
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle color theme">
+          <span class="theme-icon">◐</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Notes from the terminal</p>
+      <h1>Small posts about shipping things to the cloud.</h1>
+      <p class="lede">
+        A mock blog built with plain HTML and CSS, deployed as static files.
+        No framework, no build step, no server — just files on a CDN.
+      </p>
+    </section>
+
+    <section class="toolbar">
+      <label class="search">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="search" type="search" placeholder="Filter posts…" autocomplete="off" />
+      </label>
+      <div class="chips" id="chips">
+        <button class="chip is-active" data-tag="all">All</button>
+        <button class="chip" data-tag="netlify">Netlify</button>
+        <button class="chip" data-tag="cloud">Cloud</button>
+        <button class="chip" data-tag="tooling">Tooling</button>
+      </div>
+    </section>
+
+    <ul class="post-list" id="post-list">
+      <li class="post-card"
+          data-tags="netlify cloud"
+          data-title="deploying static sites to netlify drag and drop cdn build"
+          data-excerpt="why static files on a cdn are a great default and how netlify turns a folder into a website in seconds">
+        <a href="posts/deploying-static-sites.html">
+          <div class="post-meta">
+            <time datetime="2026-09-14">Sep 14, 2026</time>
+            <span class="dot">•</span>
+            <span>4 min read</span>
+          </div>
+          <h2>Deploying a static site to Netlify</h2>
+          <p>
+            There is no build step, no server to patch, and no container to babysit.
+            Here's why a folder of HTML files is still a fantastic way to ship.
+          </p>
+          <div class="tags">
+            <span class="tag tag-netlify">Netlify</span>
+            <span class="tag tag-cloud">Cloud</span>
+          </div>
+        </a>
+      </li>
+
+      <li class="post-card"
+          data-tags="cloud"
+          data-title="what actually happens when someone opens your website dns cdn edge tls"
+          data-excerpt="a quick tour of dns, tls and edge servers and what happens in the 200 milliseconds before your page paints">
+        <a href="posts/what-happens-when-you-visit.html">
+          <div class="post-meta">
+            <time datetime="2026-09-06">Sep 6, 2026</time>
+            <span class="dot">•</span>
+            <span>6 min read</span>
+          </div>
+          <h2>What actually happens when someone visits your site</h2>
+          <p>
+            DNS, TLS, an edge server, and a cache in between — a quick tour of the
+            two hundred milliseconds before the first pixel appears.
+          </p>
+          <div class="tags">
+            <span class="tag tag-cloud">Cloud</span>
+          </div>
+        </a>
+      </li>
+
+      <li class="post-card"
+          data-tags="tooling"
+          data-title="the smallest useful deploy checklist git branch preview environment rollback"
+          data-excerpt="a five item checklist for deploys that covers branches previews and how to undo a bad release">
+        <a href="posts/small-deploy-checklist.html">
+          <div class="post-meta">
+            <time datetime="2026-08-28">Aug 28, 2026</time>
+            <span class="dot">•</span>
+            <span>3 min read</span>
+          </div>
+          <h2>The smallest useful deploy checklist</h2>
+          <p>
+            Five things worth checking before you push to production — including
+            the one everybody forgets: knowing how to undo it.
+          </p>
+          <div class="tags">
+            <span class="tag tag-tooling">Tooling</span>
+          </div>
+        </a>
+      </li>
+
+      <li class="post-card"
+          data-tags="netlify cloud"
+          data-title="custom domains and free https on netlify dns records certificates"
+          data-excerpt="pointing a domain at netlify and getting a certificate without thinking about it">
+        <a href="posts/custom-domain-and-https.html">
+          <div class="post-meta">
+            <time datetime="2026-08-11">Aug 11, 2026</time>
+            <span class="dot">•</span>
+            <span>4 min read</span>
+          </div>
+          <h2>Custom domains, minus the headache</h2>
+          <p>
+            Two DNS records and a button. How automatic certificates made HTTPS
+            the boring default instead of a yearly chore.
+          </p>
+          <div class="tags">
+            <span class="tag tag-netlify">Netlify</span>
+            <span class="tag tag-cloud">Cloud</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+    <p class="empty" id="empty" hidden>No posts match that filter.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> The Deploy Log — a mock blog.</p>
+      <p class="footer-links">
+        <a href="about.html">About</a>
+        <a href="https://www.netlify.com" target="_blank" rel="noopener">Netlify</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
